@@ -14,8 +14,8 @@
 <body>
     <div class="bt-1">
         <form onsubmit="return false">
-            <input type="number" class="sohang1"/>
-            <input type="number" class="sohang2"/>
+            <input type="number" class="sohang1" required/>
+            <input type="number" class="sohang2"required/>
             <div>
                 <button id="Addition" onclick = tinhtoan('+')>Addition(+)</button>
                 <button id="Subtraction" onclick = tinhtoan('*')>Subtraction(X)</button>
@@ -28,11 +28,12 @@
 </body>
 <script>
     function tinhtoan(pheptinh){
-        console.log(this.class)
         let sohang1 = parseInt(document.querySelector('.sohang1').value)
         let sohang2 = parseInt(document.querySelector('.sohang2').value)
         let result = eval(sohang1 + pheptinh + sohang2)
-        document.querySelector('.result').innerHTML = `Result is ${event.srcElement.id}: ${result}`
+        if(isNaN(result) == false){
+            document.querySelector('.result').innerHTML = `Result is ${event.srcElement.id}: ${result}`
+        }
     }
 </script>
 </html>
