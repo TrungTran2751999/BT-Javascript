@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <div class="bt-1">
+        <form onsubmit="return false">
+            <input type="number" class="sohang1"/>
+            <input type="number" class="sohang2"/>
+            <div>
+                <button id="Addition" onclick = tinhtoan('+')>Addition(+)</button>
+                <button id="Subtraction" onclick = tinhtoan('*')>Subtraction(X)</button>
+                <button id="Multiplication" onclick = tinhtoan('-')>Multiplication(-)</button>
+                <button id="Division" onclick = tinhtoan('/')>Division(/)</button>
+            </div>
+            <div class="result"></div>
+        </form>
+    </div>
+</body>
+<script>
+    function tinhtoan(pheptinh){
+        console.log(this.class)
+        let sohang1 = parseInt(document.querySelector('.sohang1').value)
+        let sohang2 = parseInt(document.querySelector('.sohang2').value)
+        let result = eval(sohang1 + pheptinh + sohang2)
+        document.querySelector('.result').innerHTML = `Result is ${event.srcElement.id}: ${result}`
+    }
+</script>
+</html>
