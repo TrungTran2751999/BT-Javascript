@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./BTVN.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Body mass index-BMI</h1>
+    <div class="index">
+        <label>Height</label>
+        <input type="number" class="height" />
+    </div>
+    <div class="index">
+        <label>Weight</label>
+        <input type="number" class="weight" />
+    </div>
+    <button onclick=SubmitBMI()>Submit</button>
+    <script>
+        function SubmitBMI(){
+            let height = document.querySelector('.height').value
+            let weight = document.querySelector('.weight').value
+            let index  = weight/(height*2)
+            console.log(index)
+            let BMI = [[0,18.5],[18.5,25],[25,30] ,[30,40]]
+            let KqBMI = ['Thieu can', 'Binh thuong', 'Thua can','Map']
+            for(let i=0; i<BMI.length; i++){
+                if(index >= BMI[i][0] && index <= BMI[i][1]){
+                    alert(`Tinh trang cua ban dang la ${KqBMI[i]}`)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
