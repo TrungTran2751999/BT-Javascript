@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <div class="bt-1">
+        <form onsubmit="return false">
+            <h2>Tính điểm trung bình</h2>
+            <div>
+                <label>Toán</label>
+                <input type="number" min="0" class="toan" required>
+            </div>
+            <div>
+                <label>Lý</label>
+                <input type="number" min="0" class="ly" required>
+            </div>
+            <div>
+                <label>Hóa</label>
+                <input type="number" min="0" class="hoa" required>
+            </div>
+            <div class="result"></div>
+            <button onclick=average()>AVERAGE</button>
+        </form>
+    </div>
+    <!-- BT-2=========================================================== -->
+    <div class="bt-2">
+        <h2>Tính độ F</h2>
+        <form onsubmit="return false">
+                <label>Nhiệt độ</label>
+                <input type="number" min="0" class="nhietdo" required>
+                <button onclick=nhietdo()>Submit</button>
+                <div class="result-2"></div>
+        </form>
+    </div>
+    <!-- BT-3=========================================================== -->
+    <div class="bt-3">
+        <h2>Tính diện tích hình tròn</h2>
+        <form onsubmit="return false">
+                <label>Diện tích hình tròn: </label>
+                <input type="number" min="0" class="bankinh" required>
+                <button onclick=hinhtron()>Submit</button>
+                <div class="result-3-dientich"></div>
+                <div class="result-3-chuvi"></div>
+        </form>
+    </div>
+</body>
+<script>
+    function average(){
+        let DiemToan = parseInt(document.querySelector('.toan').value)
+        let DiemLy = parseInt(document.querySelector('.ly').value)
+        let DiemHoa = parseInt(document.querySelector('.hoa').value)
+        let average = parseInt(DiemToan + DiemLy + DiemHoa)/3
+        if(isNaN(average) == false){
+            document.querySelector('.result').innerHTML = `Điểm trung bình là :${average}`
+        }
+    }
+    function nhietdo(){
+        let NhietDoC = parseInt(document.querySelector('.nhietdo').value)
+        let NhietDoF = (NhietDoC*5/9) + 32
+        if(isNaN(NhietDoF) == false){
+            document.querySelector('.result-2').innerHTML = `Nhiet do F la: ${NhietDoF}`
+        }
+    }
+    function hinhtron(){
+        let bankinh = document.querySelector('.bankinh').value
+        let dientich = Math.PI*Math.pow(bankinh,2)
+        let chuvi = Math.PI*bankinh*2
+        document.querySelector('.result-3-dientich').innerHTML = `Diện tích hình tròn: ${dientich}`
+        document.querySelector('.result-3-chuvi').innerHTML = `Chu vi hình tròn: ${chuvi}`
+    }
+</script>
+</html>
