@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="1" onclick=Checked()>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+                <td>Good</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="2" onclick=Checked()>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+                <td>Fast</td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="3" onclick=Checked()>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+                <td>Cheap</td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+        function Checked(){
+           let Good = document.getElementById('1')
+           let Fast = document.getElementById('2')
+           let Cheap = document.getElementById('3')
+           console.log(Good, Fast, Cheap)
+           let id = event.srcElement.id
+           if(Good.checked == true && Fast.checked == true && id == 3 && Cheap.checked == true){
+                Fast.checked = false
+           }else if(Good.checked == true && Fast.checked == false && id == 3 && Cheap.checked == false){
+                Fast.checked = true
+           }
+
+           if(id == 2 && Good.checked == true && Cheap.checked == true && Fast.checked == true){
+                Good.checked = false
+           }else if(id == 2 && Good.checked == false && Cheap.checked == true && Fast.checked == false){
+                Good.checked = true
+           }
+
+           if(id == 1 && Fast.checked == true && Cheap.checked == true && Good.checked == true){
+                Cheap.checked = false
+           }else if(id == 1 && Fast.checked == false && Cheap.checked == false && Good.checked == false){
+                Cheap.checked = true
+           }
+
+           if(Good.checked == true){
+                Good.disabled = true
+           }else{
+                Good.disabled = false
+           }
+           if(Fast.checked == true){
+                Fast.disabled = true
+           }else{
+                Fast.disabled = false
+           }
+           if(Cheap.checked == true){
+                Cheap.disabled = true
+           }else{
+                Cheap.disabled = false
+           }
+        }
+    </script>
+</body>
+</html>
