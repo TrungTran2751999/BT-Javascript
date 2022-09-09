@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width: 40px;
+        height: 40px;
+        font-weight: bolder;
+    }
+    .screen{
+        height: 40px;
+        border: 1px solid grey;
+    }
+</style>
+<style>
+    .screen{
+        text-align: right;
+        position: relative;
+    }
+    .result{
+        position: absolute;
+        top: 24px;
+        right:0
+    }
+</style>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <div class="screen">
+                        <div class="pheptinh"></div>
+                        <div class="result"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    <script>
+        let arrResult = []
+        let arr = ['AC', '0', '=']
+        let arrOperator = ['','+','-','*','/']
+        for(let i=1; i<=4; i++){
+            document.querySelector('table').insertAdjacentHTML('beforeend', `<tr class="tr-${i}"></tr>`)
+            let d =''
+            if(i<4){
+                d = 1+(i-1)*3
+            }else{
+                d = 0
+            }
+            for(let j=d; j<=d+3; j++){
+                if(j==d+3){
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td><button onclick="caculate()" id="${arrOperator[i]}">${arrOperator[i]}</button></td>`)
+                    break
+                }
+                if(i<4){
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td><button onclick="caculate()" id="${j}">${j}</button></td>`)
+                }else{
+                    document.querySelector(`.tr-${i}`).insertAdjacentHTML('beforeend', `<td><button onclick="caculate()" id="${arr[j]}">${arr[j]}</button></td>`)
+                }
+            }
+        }
+        let result = ''
+        function caculate(){
+            let number = event.srcElement.id
+            switch(number){
+                case '=':
+                   result=eval(arrResult.join(''))
+                   break
+                case 'AC':
+                    result = '';
+                    arrResult = [];
+                    break;
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                    if(result != ''){
+                        arrResult = []
+                        arrResult.push(result)
+                        arrResult.push(event.srcElement.id)
+                        result = '' 
+                        break
+                    }
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    if(result != ''){
+                        arrResult = []
+                        arrResult.push(number)
+                        result=''
+                        break
+                    }
+                default:
+                    result = ''
+                    arrResult.push(event.srcElement.id)
+            }
+            document.querySelector('.result').innerHTML = result
+            document.querySelector('.pheptinh').innerHTML = arrResult.join('')
+        }
+    </script>
+    </div>
+</body>
+</html>
