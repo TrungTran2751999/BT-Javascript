@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 50%;
+        border: 5px solid grey;
+        margin-bottom: 5px;
+    }
+    
+</style>
+<body>
+    <div class="container"></div>
+    <script>
+        // monkey_part1x1.jpg
+        let arrResult = []
+        let arrName = ['monkey', 'panda_swap', 'funny-cat1']
+        for(let i=1; i<=5; i++){
+            let imgElement = `<img onclick=playing() id="${i}"></img>`
+            document.querySelector('.container').insertAdjacentHTML('beforeend', imgElement)
+            let mathRandom = Math.floor(Math.random()*3)
+            document.getElementById(`${i}`).src = `source/${arrName[mathRandom]}_part${i}x1.jpg`
+            arrResult.push(arrName[mathRandom])
+            
+        }
+        let prevRandom = ''
+        function playing(){
+            let id = event.srcElement.id
+            console.log(id)
+            let mathRandom = Math.floor(Math.random()*2)
+            if(mathRandom == prevRandom){
+                if(prevRandom >0 && prevRandom < 2){
+                    mathRandom +=1
+                }
+                if(prevRandom == 0){
+                    mathRandom +=1
+                }
+                if(prevRandom == 2){
+                    mathRandom -=1
+                }
+                console.log(prevRandom, mathRandom)
+                
+            }
+            prevRandom = mathRandom
+            document.getElementById(`${id}`).src = `source/${arrName[mathRandom]}_part${id}x1.jpg`
+            arrResult[id-1] = arrName[mathRandom]
+            console.log(arrResult)
+            let img = document.querySelectorAll('img')
+            for(let i=0; i<=3; i++){
+                if(arrResult[i] != arrResult[i+1]){
+                    for(let i=0; i<img.length; i++){
+                        img[i].style.border = '5px solid grey'
+                    }
+                    break
+                }
+                if(arrResult[i] == arrResult[i+1] && i==3){
+                    for(let i=0; i<img.length; i++){
+                        img[i].style.border = '5px solid red'
+                    }
+                }
+            }
+
+            }
+    </script>
+</body>
+</html>
