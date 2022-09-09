@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #no{
+        position: relative;
+    }
+</style>
+<body>
+    <h1>Do you love me</h1>
+    <button onclick=DoYouLoveMe() id="yes">yes</button>
+    <button onmouseover= DoYouLoveMe() id="no">no</button>
+    <script>
+        function DoYouLoveMe(){
+                let width = window.innerWidth
+                let height = window.innerHeight
+                let widthButton = document.getElementById('no').style.width
+                let heightButton = document.getElementById('no').style.height
+                if(event.srcElement.id == 'no'){
+                    document.getElementById('no').style.top = Math.floor(Math.random() * height - heightButton) + 'px';
+                    document.getElementById('no').style.left = Math.floor(Math.random() * width- widthButton) + 'px';
+                }else{
+                    alert('Yes, alright')
+                }
+        }
+    </script>
+</body>
+</html>
