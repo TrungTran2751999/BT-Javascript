@@ -13,7 +13,7 @@
             <tr>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" id="1" onclick=Checked()>
+                        <input type="checkbox" id="0" onclick=Checked()>
                         <span class="slider round"></span>
                     </label>
                 </td>
@@ -22,7 +22,7 @@
             <tr>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" id="2" onclick=Checked()>
+                        <input type="checkbox" id="1" onclick=Checked()>
                         <span class="slider round"></span>
                     </label>
                 </td>
@@ -31,7 +31,7 @@
             <tr>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" id="3" onclick=Checked()>
+                        <input type="checkbox" id="2" onclick=Checked()>
                         <span class="slider round"></span>
                     </label>
                 </td>
@@ -42,44 +42,27 @@
     </div>
     <script>
         function Checked(){
-           let Good = document.getElementById('1')
-           let Fast = document.getElementById('2')
-           let Cheap = document.getElementById('3')
-           console.log(Good, Fast, Cheap)
-           let id = event.srcElement.id
-           if(Good.checked == true && Fast.checked == true && id == 3 && Cheap.checked == true){
-                Fast.checked = false
-           }else if(Good.checked == true && Fast.checked == false && id == 3 && Cheap.checked == false){
-                Fast.checked = true
-           }
-
-           if(id == 2 && Good.checked == true && Cheap.checked == true && Fast.checked == true){
-                Good.checked = false
-           }else if(id == 2 && Good.checked == false && Cheap.checked == true && Fast.checked == false){
-                Good.checked = true
-           }
-
-           if(id == 1 && Fast.checked == true && Cheap.checked == true && Good.checked == true){
-                Cheap.checked = false
-           }else if(id == 1 && Fast.checked == false && Cheap.checked == false && Good.checked == false){
-                Cheap.checked = true
-           }
-
-           if(Good.checked == true){
-                Good.disabled = true
-           }else{
-                Good.disabled = false
-           }
-           if(Fast.checked == true){
-                Fast.disabled = true
-           }else{
-                Fast.disabled = false
-           }
-           if(Cheap.checked == true){
-                Cheap.disabled = true
-           }else{
-                Cheap.disabled = false
-           }
+            let Good = document.getElementById('0')
+            let Fast = document.getElementById('1')
+            let Cheap = document.getElementById('2')
+            let id = event.srcElement.id
+            let arr= [Good, Fast, Cheap]
+            for(let i=0; i<arr.length-1; i++){
+                if(arr[i].checked == true && arr[i].checked==arr[i+1].checked && i==1){
+                    if(id > 0){
+                        arr[id-1].checked = false
+                    }else if(id ==0){
+                        arr[parseInt(id+2)].checked =false
+                    }
+                }
+            }
+            for(let i=0; i<arr.length; i++){
+                if(arr[i].checked == true){
+                    arr[i].disabled = true
+                }else{
+                    arr[i].disabled = false
+                }
+            }
         }
     </script>
 </body>
