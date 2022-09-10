@@ -129,12 +129,12 @@
                     <caption><h3>Tính giá cước</h3></caption>
                     <tr>
                         <td>Thời gian gọi điện (phút): </td>
-                        <td><input type="number" class="bt-7-number" min="0" required style="width: 150px;"/></td>
+                        <td><input type="number" class="bt-7-number" min="0" required style="width: 150px;"/> (phút)</td>
                     </tr>
                     <tr>
                         <td>Giá cước: </td>
                         <td>
-                            Nội hạt <input type="radio" name="giacuoc" value="noihat">
+                            Nội hạt <input type="radio" name="giacuoc" value="noihat" checked>
                             Liên tỉnh và di động <input type="radio" name="giacuoc" value="lientinh">
                         </td>
                     </tr>
@@ -233,7 +233,7 @@
                         }
                     }
                     if(timeCall >= 0){
-                        document.querySelector('.bt-7-result').innerHTML = `Giá cước cuộc gọi này là: ${result}`
+                        document.querySelector('.bt-7-result').innerHTML = `Giá cước cuộc gọi này là: ${result} VND`
                     }
 
                 }
