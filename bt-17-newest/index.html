@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bt-1">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Kiểm tra chia hết</h3></caption>
+                    <tr>
+                        <td>a: </td>
+                        <td><input type="number" class="bt-1-a" required/></td>
+                    </tr>
+                    <tr>
+                        <td>b: </td>
+                        <td><input type="number" class="bt-1-b" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-1"/></td>
+                    </tr>
+                </table>
+                <div class="bt-1-result" ></div>
+            </form>
+        </div>
+        <div class="bt-2">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Kiểm tra tuổi vào lớp 10</h3></caption>
+                    <tr>
+                        <td>Tuổi </td>
+                        <td><input type="number" class="bt-2-age" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-2"/></td>
+                    </tr>
+                </table>
+                <div class="bt-2-result" ></div>
+            </form>
+        </div>
+        <div class="bt-3">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Kiểm tra số lớn hơn 0</h3></caption>
+                    <tr>
+                        <td>Nhập số: </td>
+                        <td><input type="number" class="bt-3-number" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-3"/></td>
+                    </tr>
+                </table>
+                <div class="bt-3-result" ></div>
+            </form>
+        </div>
+        <div class="bt-4">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Tìm giá trị lớn nhất</h3></caption>
+                    <tr>
+                        <td>a: </td>
+                        <td><input type="number" class="bt-4-number-a" required/></td>
+                    </tr>
+                    <tr>
+                        <td>b: </td>
+                        <td><input type="number" class="bt-4-number-b" required/></td>
+                    </tr>
+                    <tr>
+                        <td>c: </td>
+                        <td><input type="number" class="bt-4-number-c" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-4"/></td>
+                    </tr>
+                </table>
+                <div class="bt-4-result" ></div>
+            </form>
+        </div>
+        <div class="bt-5">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Điểm trung bình học kì</h3></caption>
+                    <tr>
+                        <td>1 tiết: </td>
+                        <td><input type="number" class="bt-5-begin" min="0" max="10" required style="width: 150px;"/></td>
+                    </tr>
+                    <tr>
+                        <td>Thi giữa kì: </td>
+                        <td><input type="number" class="bt-5-middle" min="0" max="10" required style="width: 150px;"/></td>
+                    </tr>
+                    <tr>
+                        <td>Thi cuối kì: </td>
+                        <td><input type="number" class="bt-5-last" min="0" max="10" required style="width: 150px;"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-5"/></td>
+                    </tr>
+                </table>
+                <div class="bt-5-result" ></div>
+            </form>
+        </div>
+        <div class="bt-6">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Tiền hoa hồng</h3></caption>
+                    <tr>
+                        <td>Doanh thu: </td>
+                        <td><input type="number" class="bt-6-number" min="0" required style="width: 150px;"/></td>
+                    </tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-6"/></td>
+                    </tr>
+                </table>
+                <div class="bt-6-result" ></div>
+            </form>
+        </div>
+        <div class="bt-7">
+            <form onsubmit="return false">
+                <table>
+                    <caption><h3>Tính giá cước</h3></caption>
+                    <tr>
+                        <td>Thời gian gọi điện (phút): </td>
+                        <td><input type="number" class="bt-7-number" min="0" required style="width: 150px;"/> (phút)</td>
+                    </tr>
+                    <tr>
+                        <td>Giá cước: </td>
+                        <td>
+                            Nội hạt <input type="radio" name="giacuoc" value="noihat" checked>
+                            Liên tỉnh và di động <input type="radio" name="giacuoc" value="lientinh">
+                        </td>
+                    </tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" value="Submit" id="bt-7"/></td>
+                    </tr>
+                </table>
+                <div class="bt-7-result" ></div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function handle(){
+            let id = event.srcElement.id
+            switch(id){
+                case 'bt-1':
+                    let a = document.querySelector('.bt-1-a').value
+                    let b = document.querySelector('.bt-1-b').value
+                    if(a!='' && b!=''){
+                        if(a % b == 0){
+                        document.querySelector('.bt-1-result').innerHTML = `${a} chia hết ${b}`
+                        }else{
+                            document.querySelector('.bt-1-result').innerHTML = `${a} không chia hết ${b}`
+                        }
+                    }
+                    break
+                case 'bt-2':
+                    let age = document.querySelector('.bt-2-age').value
+                    if(age != '' && age > 0){
+                        if(age >= 16 && age <18){
+                        document.querySelector('.bt-2-result').innerHTML = `Thí sinh đủ điều kiện vào lớp 10`
+                        }else{
+                            document.querySelector('.bt-2-result').innerHTML = `Thí sinh không đủ điều kiện vào lớp 10`
+                        }
+                    }
+                    break
+                case 'bt-3':
+                    let number = document.querySelector('.bt-3-number').value
+                    if(number > 0){
+                        document.querySelector('.bt-3-result').innerHTML = `${number} là số lớn hơn 0`
+                    }else if(number < 0){
+                        document.querySelector('.bt-3-result').innerHTML = `${number} là số bé hơn 0`
+                    }
+                    break
+                case 'bt-4':
+                    let a4 = document.querySelector('.bt-4-number-a').value
+                    let b4 = document.querySelector('.bt-4-number-b').value
+                    let c4 = document.querySelector('.bt-4-number-c').value
+                    let arr = [a4, b4, c4]
+                    let max = arr[0]
+                    if(a4 != '' && b4 != '' && c4 != ''){
+                        for(let i=0; i<arr.length; i++){
+                        if(parseInt(arr[i]) > parseInt(max)){
+                            max = arr[i]
+                        } 
+                    }
+                    document.querySelector('.bt-4-result').innerHTML = `${max} là số lớn nhất`
+                    }
+                    break
+                case 'bt-5':
+                    let begin = parseInt(document.querySelector('.bt-5-begin').value)
+                    let middle = parseInt(document.querySelector('.bt-5-middle').value)
+                    let last = parseInt(document.querySelector('.bt-5-last').value)
+                    let average = (begin + middle + last)/3
+                    let arrMark = [begin, middle, last] 
+                    for(let i=0; i<arrMark.length; i++){
+                        if(arrMark[i] < 0 || arrMark[i] > 10){
+                            document.querySelector('.bt-5-result').innerHTML = ''
+                            return
+                        }
+                    }
+                    let arrMarkRank = [[0, 5],[5, 6.9],[7, 7.9],[8, 10]]
+                    let arrRank = ['xếp loại yếu', 'xếp loại trung bình', 'xếp loại khá', 'xếp loại giỏi']
+                    for(let i=0; i<arrMarkRank.length; i++){
+                        if(average >= arrMarkRank[i][0] && average <= arrMarkRank[i][1]){
+                            document.querySelector('.bt-5-result').innerHTML = `${average}: ${arrRank[i]}`
+                        }
+                    }
+                    break
+                case 'bt-6':
+                    let Doanhthu = parseInt(document.querySelector('.bt-6-number').value)
+                    let HoaHong = (20/100) * Doanhthu
+                    if(Doanhthu > 0){
+                        document.querySelector('.bt-6-result').innerHTML = `Tiền hoa hồng là ${HoaHong} VND`
+                    }
+                    break
+                case 'bt-7':
+                    let arrGiacuoc = [3000, 4500]
+                    let timeCall = document.querySelector('.bt-7-number').value
+                    let checkbox = document.getElementsByName('giacuoc')
+                    console.log(checkbox)
+                    let result = ''
+                    for(let i=0; i<arrGiacuoc.length; i++){
+                        if(checkbox[i].checked == true){
+                            result = timeCall*arrGiacuoc[i]
+                        }
+                    }
+                    if(timeCall >= 0){
+                        document.querySelector('.bt-7-result').innerHTML = `Giá cước cuộc gọi này là: ${result} VND`
+                    }
+
+                }
+                
+        }
+    </script>
+</body>
+</html>
