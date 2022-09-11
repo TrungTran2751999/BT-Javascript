@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onclick="return false">
+        <table>
+            <caption><h2>Dãy số nguyên tố</h2></caption>
+            <tr>
+                <td><input type="number" min="1" class="number"/></td>
+                <td><input onclick=result() type="submit"/></td>
+            </tr>
+        </table>
+        <div class="bt-24-result"></div>
+    </form>
+    <script>
+        let arr = [2]
+        function result(){
+            let number = parseInt(document.querySelector('.number').value)
+                for(let i=arr[arr.length-1]+1; i<Math.pow(arr[arr.length-1],2); i++){
+                    for(let a=2; a<i; a++){
+                        if(i % a == 0){
+                            break
+                        }else if(a == i-1){
+                            arr.push(i)
+                        }
+                    }
+                    if(arr.length == number){
+                        break
+                    }
+                }
+                document.querySelector('.bt-24-result').innerHTML = `<b>${number} số nguyên tố đầu tiên là </b>: ${arr.join(', ')}`
+                console.log(arr)
+            }
+        // }
+    </script>
+</body>
+</html>
