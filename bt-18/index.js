@@ -157,30 +157,34 @@ function handle(){
             let arrTN = [[0, 5*trD], [5*trD, 10*trD], [10*trD, 18*trD], [18*trD, 32*trD], [32*trD, 52*trD], [52*trD, 80*trD]]
             let arrTS = [5/100, 10/100, 15/100, 20/100, 25/100, 30/100, 35/100]
             let ChiuThue = TN-11*trD-dep*4.4*trD
-            if(ChiuThue <= 0){
-                document.querySelector('.bt-11-result').innerHTML = `<div>Thuế TNCN phải nộp: 0 VND</div>
-                                                                     <div>Thực lãnh: ${TN} VND</div>`
-            }else{
-                let sum = 0
-                for(let i=0; i<arrTN.length; i++){
-                    if(ChiuThue > arrTN[i][0] && ChiuThue <= arrTN[i][1]){
-                        for(let j=0; j<i; j++){
-                            sum += (arrTN[j][1] - arrTN[j][0]) * arrTS[j]
-                            console.log(sum)
+            if(TN > 0 && dep >= 0){
+                if(ChiuThue <= 0){
+                    document.querySelector('.bt-11-result').innerHTML = `<div>Thuế TNCN phải nộp: 0 VND</div>
+                                                                        <div>Thực lãnh: ${TN} VND</div>`
+                }else{
+                    let sum = 0
+                    for(let i=0; i<arrTN.length; i++){
+                        if(ChiuThue > arrTN[i][0] && ChiuThue <= arrTN[i][1]){
+                            for(let j=0; j<i; j++){
+                                sum += (arrTN[j][1] - arrTN[j][0]) * arrTS[j]
+                                console.log(sum)
+                            }
+                            sum += (ChiuThue-arrTN[i][0])*arrTS[i]
+                            break
                         }
-                        sum += (ChiuThue-arrTN[i][0])*arrTS[i]
-                        break
                     }
-                }
-                if(ChiuThue > 80*trD){
-                    for(let j=0; j<arrTN.length; j++){
-                        sum += (arrTN[j][1] - arrTN[j][0]) * arrTS[j]
-                        console.log((arrTN[j][1] - arrTN[j][0]) * arrTS[j])
+                    if(ChiuThue > 80*trD){
+                        for(let j=0; j<arrTN.length; j++){
+                            sum += (arrTN[j][1] - arrTN[j][0]) * arrTS[j]
+                            console.log((arrTN[j][1] - arrTN[j][0]) * arrTS[j])
+                        }
+                        sum += (ChiuThue-arrTN[5][1])*arrTS[6]
                     }
-                    sum += (ChiuThue-arrTN[5][1])*arrTS[6]
+                    document.querySelector('.bt-11-result').innerHTML = `<div>Thuế TNCN phải nộp: ${sum} VND</div>
+                                                                        <div>Thực lãnh: ${TN-sum} VND</div>`
                 }
-                document.querySelector('.bt-11-result').innerHTML = `<div>Thuế TNCN phải nộp: ${sum} VND</div>
-                                                                     <div>Thực lãnh: ${TN-sum} VND</div>`
+            }else{
+                document.querySelector('.bt-11-result').innerHTML = ''
             }
             break
             case 'bt-12':
