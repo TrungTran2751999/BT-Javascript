@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bt-1">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Đổi đơn vị độ C sang độ F</h3></caption>
+                    <tr>
+                        <td>Nhập đơn vị</td>
+                        <td><input type="number" class="bt-1-number" required/><sup>o</sup>C</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" onclick=handle() id="bt-1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-1-result"></div>
+            </form>
+        </div>
+        <div class="bt-2">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Đổi đơn vị met sang feet</h3></caption>
+                    <tr>
+                        <td>Nhập đơn vị: </td>
+                        <td><input type="number" class="bt-2-met" required/> m</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" onclick=handle() id="bt-2" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-2-result"></div>
+            </form>
+        </div>
+        <div class="bt-3">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Tính diện tích hình vuông</h3></caption>
+                    <tr>
+                        <td>Nhập độ dài cạnh: </td>
+                        <td><input type="number" class="bt-3-canh-a" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-3" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-3-result"></div>
+            </form>
+        </div>
+        <div class="bt-4">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Tính diện tích hình chữ nhật</h3></caption>
+                    <tr>
+                        <td>Nhập chiều rộng: </td>
+                        <td><input type="number" class="bt-4-chieu-rong" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Nhập chiều dài: </td>
+                        <td><input type="number" class="bt-4-chieu-dai" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-4" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-4-result"></div>
+            </form>
+        </div>
+        <div class="bt-5">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Tính diện tích tam giác vuông</h3></caption>
+                    <tr>
+                        <td>Nhập chiều cao: </td>
+                        <td><input type="number" class="bt-5-chieu-cao" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Nhập cạnh đáy: </td>
+                        <td><input type="number" class="bt-5-canh-day" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-5" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-5-result"></div>
+            </form>
+        </div>
+        <div class="bt-6">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Giải phương trình bậc 1 (ax + b = c)</h3></caption>
+                    <tr>
+                        <td><input type="number" class="bt-6-a" min="1" required/>x + </td>
+                        <td><input type="number" class="bt-6-b" min="1" required/> = 0</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-6" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-6-result"></div>
+            </form>
+        </div>
+        <div class="bt-7">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Giải phương trình bậc 2 (ax<sup>2</sup> + bx + c = 0)</h3></caption>
+                    <tr>
+                        <td><input type="number" class="bt-7-a" min="1" required/>x<sup>2</sup> + </td>
+                        <td><input type="number" class="bt-7-b" min="1" required/>x + </td>
+                        <td><input type="number" class="bt-7-c" min="1" required/> = 0</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-7" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-7-result"></div>
+            </form>
+        </div>
+        <div class="bt-8">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Kiểm tra tuổi</h3></caption>
+                    <tr>
+                        <td><input type="number" class="bt-8-age" min="1" required/></td>
+                        <td><input onclick=handle() type="submit" id="bt-8" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-8-result"></div>
+            </form>
+        </div>
+        <div class="bt-9">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Kiểm tra tam giác</h3></caption>
+                    <tr>
+                        <td>Nhập cạnh a: </td>
+                        <td><input type="number" class="bt-9-a" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Nhập cạnh b: </td>
+                        <td><input type="number" class="bt-9-b" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Nhập cạnh c: </td>
+                        <td><input type="number" class="bt-9-c" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-9" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-9-result"></div>
+            </form>
+        </div>
+        <div class="bt-11">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Tính tiền điện</h3></caption>
+                    <tr>
+                        <td>Nhập số KW: </td>
+                        <td><input type="number" class="bt-10-kW" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-10" min="1" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-10-result"></div>
+            </form>
+        </div>
+        <div class="bt-11">
+            <form onclick="return false">
+            <table>
+                    <caption><h3>Tính thuế thu nhập cá nhân</h3></caption>
+                    <tr>
+                        <td>Tổng thu nhập: </td>
+                        <td><input type="number" class="bt-11-TN" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Số người phụ thuộc: </td>
+                        <td><input type="number" class="bt-11-dep" min="0" required/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-11" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-11-result"></div>
+            </form>
+        </div>
+        <div class="bt-12">
+            <form onclick="return false">
+                <table>
+                    <caption><h3>Tính thuế thu nhập cá nhân</h3></caption>
+                    <tr>
+                        <td>Số vốn: </td>
+                        <td><input type="number" class="bt-12-begin" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Số tháng cho vay: </td>
+                        <td><input type="number" class="bt-12-month" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Lãi suất hằng tháng: </td>
+                        <td><input type="number" class="bt-12-interest" min="1" required/> %</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-12" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-12-result"></div>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
