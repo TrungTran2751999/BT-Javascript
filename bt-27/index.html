@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bt-1">
+            <h2>Bài tập 1</h2>
+            <form onclick="return false">
+                <input type="number" value='99' disabled>
+                <input type="submit" id="bt-1" onclick=handle()>
+            </form>
+        </div>
+        <div class="bt-2">
+            <h2>Bài tập 2</h2>
+            <button id="bt-2" onclick=handle()>Bt2</button>
+        </div>
+        <div class="bt-3">
+            <h2>Dãy số fibonacci</h2>
+            <form onclick="return false">
+                <input type="number" class="bt-3-input">
+                <input type="submit" id="bt-3" onclick=handle()>
+            </form>
+            <div class="bt-3-result"></div>
+        </div>
+        <div class="bt-4">
+            <h2>Fibonacci chia hết cho 5</h2>
+            <form onclick="return false">
+                <table>
+                    <tr>
+                        <td>Begin</td>
+                        <td><input type="number" class="bt-4-begin"></td>
+                    </tr>
+                    <tr>
+                        <td>Finish</td>
+                        <td><input type="number" class="bt-4-finish"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-4" onclick=handle()></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="bt-4-result"></div>
+        </div>
+        <div class="bt-6">
+            <h2>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h2>
+            <form onclick="return false">
+                <table>
+                    <tr>
+                        <td>Begin</td>
+                        <td><input type="number" class="bt-5-begin"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-5" onclick=handle()></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="bt-5-result"></div>
+        </div>
+        <div class="bt-7">
+            <h2>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h2>
+            <form onclick="return false">
+                <table>
+                    <tr>
+                        <td>Begin</td>
+                        <td><input type="number" class="bt-7-begin"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-7" onclick=handle()></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="bt-7-result"></div>
+        </div>
+        <div class="bt-8">
+            <h2>Hãy viết một chương trình in ra các số từ 1 đến 100</h2>
+            <button onclick=handle() id="bt-8">Click me!</button>
+            <div class="bt-8-result"></div>
+        </div>
+        <div class="bt-9">
+            <h2>Hãy viết một chương trình in ra các số từ 1 đến 100</h2>
+            <div class="container-bt-9">
+                <table>
+                    <tr>
+                        <td>Game đoán số: </td>
+                        <td><input type="number" class="bt-9-input"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-9" onclick=handle()></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
