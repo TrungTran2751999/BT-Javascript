@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let parent = {
+            child: 0
+        }
+        let a = parent.child
+        function play(parent){
+            parent = 1
+        }
+        play(a)
+        console.log(parent)
+
+    </script>
+</body>
+</html>

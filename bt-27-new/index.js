@@ -102,18 +102,19 @@ function handle(){
             {
             time = time + 1
             let input =  document.querySelector('.bt-9-input').value
+            let LuckyNumber 
             if(input > 0){
                 if(time > 3){
                     document.querySelector('.container-bt-9').innerHTML = 'Bạn đã hết lượt'
                 }else{
-                        let LuckyNumber = Math.random()+input*2
+                        LuckyNumber = Math.floor(Math.random()*input)
                     if(input == LuckyNumber){
                         alert('Bạn may mắn vl')
                     }else{
                         alert(`Chúc bạn may mắn lần sau. Bạn còn ${3-time} lượt chơi`)
                     }
                 }
-                console.log(time)
+                console.log(LuckyNumber)
             }
         }
         }
