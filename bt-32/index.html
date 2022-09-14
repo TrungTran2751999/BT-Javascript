@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Danh cho bai tap 8 */
+    .index-hidden{
+        display: none;
+    }
+    .index-show{
+        display: block;
+    }
+</style>
+<body>
+    <div class="container">
+        <form onclick="return false">
+            <h2>Tính bình phương</h2>
+            <div class="bt-1">
+                <input type="number" class="bt-1-input" name="bt-1-input" required>
+                <input type="submit" id="bt-1" onclick=handle()>
+            </div>
+            <div class="bt-1-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Tính chu vi và diện tích hình tròn</h2>
+            <div class="bt-2">
+                <input type="number" class="bt-2-input" name="bt-2-input" required>
+                <input type="submit" id="bt-2" onclick=handle()>
+            </div>
+            <div class="bt-2-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Tính giai thừa</h2>
+            <div class="bt-3">
+                <input type="number" class="bt-3-input" name="bt-3-input" required>
+                <input type="submit" id="bt-3" onclick=handle()>
+            </div>
+            <div class="bt-3-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Checking number</h2>
+            <div class="bt-4">
+                <input class="bt-4-input" name="bt-4-input" required>
+                <input type="submit" id="bt-4" onclick=handle()>
+            </div>
+            <div class="bt-4-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Checking min</h2>
+            <div class="bt-5">
+                <table>
+                    <tr>
+                        <td>a: </td>
+                        <td><input class="bt-5-input-a" name="bt-5-input-a" required></td>
+                    </tr>
+                    <tr>
+                        <td>b: </td>
+                        <td><input class="bt-5-input-b" name="bt-5-input-b" required></td>
+                    </tr>
+                    <tr>
+                        <td>c: </td>
+                        <td><input class="bt-5-input-c" name="bt-5-input-c" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-5" onclick=handle()></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="bt-5-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Checking positive</h2>
+            <div class="bt-6">
+                <input type="number" class="bt-6-input" name="bt-6-input" required>
+                <input type="submit" id="bt-6" onclick=handle()>
+            </div>
+            <div class="bt-6-result"></div>
+        </form>
+        <form onclick="return false">
+            <h2>Hoán vị 2 số</h2>
+            <div class="bt-7">
+                <table>
+                    <tr>
+                        <td>a: </td>
+                        <td><input type="number" class="bt-7-input-a" name="bt-7-input-a" required></td>
+                    </tr>
+                    <tr>
+                        <td>b: </td>
+                        <td><input type="number" class="bt-7-input-b" name="bt-7-input-b" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" id="bt-7" onclick=handle()></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="bt-7-result"></div>
+        </form>
+        <div class="bt-8">
+            <h2>Array</h2>
+            <input type="number" class="bt-8-input" />
+            <button onclick=handle() id="bt-8-add">Add</button>
+            <button onclick=handle() id="bt-8-toggle">Display</button>
+            <div class="index-hidden" id="display-show"></div>
+        </div>
+        <form onclick="return false">
+            <h2>Checking number in Array</h2>
+            <div class="bt-9">
+                <input class="bt-9-input" name="bt-9-input" required>
+                <input type="submit" id="bt-9" onclick=handle()>
+            </div>
+            <div class="bt-9-result"></div>
+        </form>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

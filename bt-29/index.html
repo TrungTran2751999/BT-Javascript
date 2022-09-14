@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .margin-in{
+        margin-bottom: 10px;
+    }
+    .bt-6-result{
+        position: relative; top:0; left:0px
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="bt-1">
+            <h2>Dãy số fibonacci</h2>
+            <form onclick="return false">
+                <input type="number" class="bt-1-input">
+                <input type="submit" id="bt-1" onclick=handle()>
+            </form>
+            <div class="bt-1-result"></div>
+        </div>
+        <div class="bt-2">
+            <h2>Tính giai thừa</h2>
+            <form onclick="return false">
+                <input type="number" class="bt-2-input">
+                <input type="submit" id="bt-2" onclick=handle()>
+            </form>
+            <div class="bt-2-result"></div>
+        </div>
+        <div class="bt-3">
+            <h2>Lặp tam giác</h2>
+            <form onclick="return false">
+                <input type="number" class="bt-3-input">
+                <input type="submit" id="bt-3" onclick=handle()>
+            </form>
+            <div class="bt-3-result"></div>
+        </div>
+        <div class="bt-4">
+            <h2>Tính giai thừa</h2>
+            <form onclick="return false">
+                <table>
+                    <tr>
+                        <td>Width: </td>
+                        <td><input type="number" class="width-bt-4"></td>
+                    </tr>
+                    <tr>
+                        <td>Height: </td>
+                        <td><input type="number" class="height-bt-4"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" onclick=handle() value="Submit" id="bt-4"></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="bt-4-result"></div>
+        </div>
+        <div class="bt-5">
+            <form onclick="return false">
+                <table>
+                    <caption><h3>Lãi suất hằng tháng</h3></caption>
+                    <tr>
+                        <td>Số vốn: </td>
+                        <td><input type="number" class="bt-5-begin" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Số tháng cho vay: </td>
+                        <td><input type="number" class="bt-5-month" min="1" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Lãi suất hằng tháng: </td>
+                        <td><input type="number" class="bt-5-interest" min="1" required/> %</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onclick=handle() type="submit" id="bt-5" value="Submit" /></td>
+                    </tr>
+                </table>
+                <div class="bt-5-result"></div>
+            </form>
+        </div>
+        <div class="bt-6">
+            <h2>Vẽ trái tym</h2>
+            <button onclick=handle() id="bt-6">Submit</button>
+            <div class="bt-6-result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
