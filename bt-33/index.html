@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" onclick="return false">
+            <table>
+                <caption><h2>Convert Foot-Meter</h2></caption>
+                <tr>
+                    <td>Meter</td>
+                    <td><input type="number" class="meter"></td>
+                </tr>
+                <tr>
+                    <td>Footer</td>
+                    <td><input type="number" class="footer"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" id="submit" onclick=ConvertUnit() value="Submit"></td>
+                </tr>
+            </table>
+            <div class="result"></div>
+        </form>
+    </div>
+    <script>
+        function ConvertUnit(){
+            let meter = document.querySelector('.meter').value
+            let footer = document.querySelector('.footer').value
+            let MeterToFooter = meter*3.279
+            let footerToMeter = footer*0.305
+            if(meter > 0 && footer > 0){
+                document.querySelector('.result').innerHTML = `<div>${footer} foot = ${footerToMeter} m</div>
+                                                               <div>${meter} m = ${MeterToFooter} foot</div>`
+            }else{
+                document.querySelector('.result').innerHTML = ''
+            }
+        }
+    </script>
+</body>
+</html>
