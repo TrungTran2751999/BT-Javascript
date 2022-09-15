@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" onclick="return false">
+            <h2>Dictionary</h2>
+            Tiếng Việt
+            <input type="text" class="dictionary">
+            <input type="submit" onclick=translated() id="output" >
+        </form>
+        <div class="result"></div>
+    </div>
+    <script>
+      
+        let arrVni = ['meo']
+        let arrEng = ['cat']
+        function translated(){
+            let input = document.querySelector('.dictionary').value
+            for(let i=0; i<arrVni.length; i++){
+                if(input == arrVni[i]){
+                    document.querySelector('.result').innerHTML = `${input} trong tiếng Anh nghĩa là ${arrEng[i]}`
+                    break
+                }
+                if(i == arrVni.length-1){
+                    document.querySelector('.result').innerHTML = `<div>Từ bạn tìm hiện không có trong từ điển vui lòng bổ sung thêm nó vào từ điển !<div>
+                                                                    Tieng Anh
+                                                                   <input type="text" class="transalte_push">
+                                                                   <input type="submit" onclick="addDictionary()">
+                                                                   `
+                }
+            }
+        }
+        function addDictionary(){
+            let input = document.querySelector('.dictionary').value
+            let pushNewWord = document.querySelector('.transalte_push').value
+            arrVni.push(input)
+            arrEng.push(pushNewWord)
+            document.querySelector('.result').innerHTML = ''
+            console.log(arrVni)
+        }
+    </script>
+</body>
+</html>
