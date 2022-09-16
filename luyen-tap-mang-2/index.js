@@ -71,6 +71,36 @@ function handle(){
                     }
                 }
                 document.querySelector('.result-bt-6').innerHTML = `<div>${text} sau khi chuyyển đổi "-" sang "_" là ${arr.join('')}</div>`
+            break
+            }
+        }
+        case 'bt-7':{
+            console.log('vvv')
+            let text = document.querySelector('.bt-7-input').value
+            let arr = text.split('')
+            console.log(arr)
+            let element = document.querySelector('.result-bt-7')
+            let j
+            if(arr[0] != arr[arr.length-1]){
+                console.log('mm')
+                element.innerHTML = `${text} is not palindrome`
+                return
+            }
+            for(let i=1; i<Math.floor(arr.length/2); i++){
+                if(arr.length % 2==0){
+                    j=0
+                    console.log(j)
+                }else{
+                    j=2
+                }
+                console.log(arr[i], arr[arr.length-i-j], i, arr.length-i-j)
+                if(arr[i] != arr[arr.length-i-j-1]){
+                    element.innerHTML = `${text} is not palindrome`
+                    break
+                }
+                if(i == Math.floor(arr.length/2)-1){
+                    element.innerHTML = `${text} is palindrome`
+                }
             }
         }
     }
