@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function alertMessage(){
+            alert('Xin chao')
+        }
+        alertMessage()
+        function numberPlus(x){
+            let y=x
+            x=x+1
+            alert(`${y} + 1 = ${x}`)
+        }
+        numberPlus(3)
+        function conditionNumber(a, b){
+            // if(a > b){
+            //     alert(`${a} > ${b}`)
+            // }
+            // if(a < b){
+            //     alert(`${a} + ${b} = ${a+b}`)
+            // }
+            a > b ? alert(`${a} > ${b}`) : a < b ? alert(`${a} + ${b} = ${a+b}`):''
+        }
+        conditionNumber(3, 2)
+        conditionNumber(2, 3)
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        alert(`result1 = ${result}`)
+        result = addNumbers(); 
+        alert(`result2 = ${result}`)
+
+        let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+        let arr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major' ,'Leo']
+        function findStar(star){
+            for(let i=0; i<arr1.length; i++){
+                if(star == arr1[i]){
+                    alert(`${arr1[i]} tương ứng với ${arr2[i]}`)
+                }
+            }
+        }
+        // console.log(Math.floor(Math.random()*6)
+        findStar(arr1[Math.floor(Math.random()*6)])
+    </script>
+</body>
+</html>
