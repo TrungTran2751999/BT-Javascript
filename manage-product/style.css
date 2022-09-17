@@ -1,0 +1,38 @@
+.add-new-product{
+    padding: 24px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 30%;
+    border-radius: 5px;
+}
+.new-product-input, .edit-product-input{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cccccc;
+    padding-left: 10px;
+}
+.class-button{
+    width: 70px;
+    height: 43px;
+    border-radius: 5px;
+    background-color: #50af50;
+    color: white;
+    border: none;
+}
+.class-button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+table{
+    border-collapse: collapse;
+    margin-left: 15px;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+td, th{
+    padding: 10px 32px;
+    font-size: 16px;
+}

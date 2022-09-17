@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="add">
+            <h2>Add New Product</h2>
+            <div class="add-new-product">
+                <input type="text" id="new-product-input" class="new-product-input class-add" placeholder="New product" oninput=scanProductName(this.id)>
+                <button id="add-buton" class="class-button" onclick=addNewProduct()>Add</button>
+                <div id="warning"></div>
+            </div>
+        </div>
+        <div class="display-all-product">
+            <h2>Display All Product</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: left;"><h4>Product Name</h4></th>
+                        <th></th>
+                        <th style="text-align: right;" class="count-product">1 product</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="product-0">
+                        <td class="0-product-name">Sony Xperia</td>
+                        <td class="0-product-edit">
+                            <button id="0-index-edit" class="class-button" onclick=editProduct(id)>Edit</button>
+                            <div id="warning-edit-0"></div>
+                        </td>
+                        <td><button id="0-delete-index" class="class-button" onclick=deleteProduct(id)>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
